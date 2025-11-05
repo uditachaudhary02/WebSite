@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Luxury Hotel Color Palette */
+    --background: 40 20% 97%;
+    --foreground: 0 0% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    /* Premium Gold */
+    --primary: 45 63% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 45 70% 70%;
+    --primary-dark: 45 60% 40%;
+
+    /* Charcoal Elegance */
+    --secondary: 0 0% 17%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 45 63% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 45 63% 52%;
+
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --luxury-gold: 45 63% 52%;
+    --luxury-gold-light: 45 70% 70%;
+    --luxury-gold-dark: 45 60% 40%;
+    --charcoal: 0 0% 17%;
+    --cream: 40 20% 97%;
+    
+    /* Glass Effects */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.2;
+    
+    /* Shadows */
+    --shadow-luxury: 0 10px 40px -10px hsl(45 63% 52% / 0.2);
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.08);
+    --shadow-glass: 0 8px 32px 0 hsl(0 0% 0% / 0.1);
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(45 63% 52%), hsl(45 70% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 17% / 0.9), hsl(0 0% 17% / 0.7));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 20% 98%));
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 45 70% 70%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 45 70% 70%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 45 70% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20;
+  }
+
+  .shadow-luxury {
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glass {
+    box-shadow: var(--shadow-glass);
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
